@@ -6,6 +6,7 @@ package application;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
@@ -52,6 +53,21 @@ public class HotelController {
 
     @FXML // fx:id="txtCalendario"
     private TextArea txtCalendario; // Value injected by FXMLLoader
+
+    @FXML
+    void insertAzienda(ActionEvent event) {
+    	
+    }
+
+    @FXML
+    void insertCliente(ActionEvent event) {
+
+    }
+
+    @FXML
+    void searchDate(ActionEvent event) {
+
+    }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
