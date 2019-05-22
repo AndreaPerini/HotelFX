@@ -8,7 +8,7 @@ public class Avvia {
 		File f = new File("Hotel.txt");
 		Scanner sc = new Scanner(System.in);
 		boolean termina = false;
-		Cliente cli = new Cliente();
+		Privato p = new Privato();
 		Azienda a = new Azienda();
 		Hotel h = new Hotel();
 		int nCamera, dataDa, dataA;
@@ -57,16 +57,16 @@ public class Avvia {
 						"Il cliente da inserire è un cliente privato o un'azienda?(Inserisci 'privato' o 'azienda')");
 				if (sc.next().equalsIgnoreCase("privato")) {
 					System.out.println("Inserisci il nome");
-					cli.setNome(sc.next());
+					p.setNome(sc.next());
 					System.out.println("Inserisci il cognome");
-					cli.setCognome(sc.next());
+					p.setCognome(sc.next());
 					System.out.println("Inserisci il numero di telefono");
-					cli.setNumeroTelefono(sc.nextInt());
+					p.setNumeroTelefono(sc.nextInt());
 					System.out.println("Inserisci la data di inizio del periodo");
 					dataDa = sc.nextInt();
 					System.out.println("Inserisci la data di fine del periodo");
 					dataA = sc.nextInt();
-					h.aggiungiCliente(nCamera, cli, dataDa, dataA);
+					h.aggiungiCliente(nCamera, p, dataDa, dataA);
 				} else {
 					System.out.println("Inserisci il nome");
 					a.setNome(sc.next());
@@ -99,13 +99,13 @@ public class Avvia {
 				nome = sc.next();
 				System.out.println("Inserisci il cognome del cliente da ricercare");
 				cognome = sc.next();
-				h.cercaCliente(nome, cognome);
+//				h.cercaCliente(nome, cognome);
 				break;
 			case 4:
 				System.out.println("Inserisci il numero della camera");
 				nCamera = sc.nextInt();
 				System.out.println("Inserisci la data");
-				h.controllaCamera(nCamera, sc.nextInt());
+//				h.controllaCamera(nCamera, sc.nextInt());
 				break;
 			default:
 				termina = true;

@@ -2,21 +2,52 @@ package application;
 
 public class Camera {
 
+	private int numeroCamera = 0;
 	private float prezzoMinimo;
 	private float prezzoMassimo;
 	private int numeroPostiLetto;
-	private Cliente[] clienti = new Cliente[365];
-
-	public Camera(float prezzoMinimo, float prezzoMassimo, int numeroPostiLetto) {
-		this.prezzoMinimo = prezzoMinimo;
-		this.prezzoMassimo = prezzoMassimo;
-		this.numeroPostiLetto = numeroPostiLetto;
-		for (int i = 0; i < clienti.length; i++) {
-			clienti[i] = null;
-		}
-	}
+//	private Cliente[] clienti = new Cliente[365];
+	private Cliente [][] clienti = new Cliente [12][];
+	
 
 	public Camera() {
+		this.numeroCamera = numeroCamera++;
+		for(int i=0; i<31; i++) {//gennaio
+			clienti[0][i] = null;
+		}
+		for(int i=0; i<28; i++) {//febbraio
+			clienti[0][i] = null;
+		}
+		for(int i=0; i<31; i++) {//marzo
+			clienti[0][i] = null;
+		}
+		for(int i=0; i<30; i++) {//aprile
+			clienti[0][i] = null;
+		}
+		for(int i=0; i<31; i++) {//maggio
+			clienti[0][i] = null;
+		}
+		for(int i=0; i<30; i++) {//giugno
+			clienti[0][i] = null;
+		}
+		for(int i=0; i<31; i++) {//luglio
+			clienti[0][i] = null;
+		}
+		for(int i=0; i<31; i++) {//agosto
+			clienti[0][i] = null;
+		}
+		for(int i=0; i<30; i++) {//settembre
+			clienti[0][i] = null;
+		}
+		for(int i=0; i<31; i++) {//ottobre
+			clienti[0][i] = null;
+		}
+		for(int i=0; i<30; i++) {//novembre
+			clienti[0][i] = null;
+		}
+		for(int i=0; i<31; i++) {//dicembre
+			clienti[0][i] = null;
+		}
 	}
 
 	public float getPrezzoMinimo() {
@@ -43,12 +74,8 @@ public class Camera {
 		this.numeroPostiLetto = numeroPostiLetto;
 	}
 
-	public Cliente[] getClienti() {
+	public Cliente[][] getClienti() {
 		return clienti;
-	}
-
-	public void setClienti(Cliente[] clienti) {
-		this.clienti = clienti;
 	}
 
 }
