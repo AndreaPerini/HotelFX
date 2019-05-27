@@ -1,7 +1,6 @@
 package application;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -12,9 +11,8 @@ public class Hotel {
 	private Camera[] hotel = new Camera[20];
 
 	public Hotel() {
-		File f = new File("Hotel.txt");
 		try {
-			BufferedReader in = new BufferedReader(new FileReader(f));
+			BufferedReader in = new BufferedReader(new FileReader("Hotel.txt"));
 			Camera c = new Camera();
 			String s = new String();
 			String[] riga;
