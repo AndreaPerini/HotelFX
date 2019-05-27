@@ -73,9 +73,18 @@ public class Camera {
 	public void setNumeroPostiLetto(int numeroPostiLetto) {
 		this.numeroPostiLetto = numeroPostiLetto;
 	}
+	
+	public void setClienti(Cliente cliente, int giorno, int mese) {
+		this.clienti[giorno-1][mese-1] = cliente;
+	}
+	
+	public boolean isVuota(int giorno, int mese) {
+		if(clienti[giorno-1][mese-1]==null)return true;
+		return false;
+	}
 
-	public Cliente[][] getClienti() {
-		return clienti;
+	public Cliente getClienti(int giorno, int mese) {
+		return clienti[giorno-1][mese-1];
 	}
 
 }

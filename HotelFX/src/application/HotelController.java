@@ -21,11 +21,14 @@ public class HotelController {
 	@FXML // URL location of the FXML file that was given to the FXMLLoader
 	private URL location;
 
-	@FXML // fx:id="txtDataInizio"
-	private TextField txtDataInizio; // Value injected by FXMLLoader
+	@FXML // fx:id="dateInizio"
+	private DatePicker dateInizio; // Value injected by FXMLLoader
 
-	@FXML // fx:id="txtDataFine"
-	private TextField txtDataFine; // Value injected by FXMLLoader
+	@FXML // fx:id="dateFine"
+	private DatePicker dateFine; // Value injected by FXMLLoader
+
+	@FXML // fx:id="txtCamera"
+	private TextField txtCamera; // Value injected by FXMLLoader
 
 	@FXML // fx:id="txtNome"
 	private TextField txtNome; // Value injected by FXMLLoader
@@ -65,7 +68,8 @@ public class HotelController {
 
 	private Hotel h = new Hotel();
 	private Azienda a;
-	private Cliente c;
+	private Privato p;
+	private int n;
 
 	@FXML
 	void insertAzienda(ActionEvent event) {
@@ -73,22 +77,46 @@ public class HotelController {
 		a.setNomeAzienda(txtAzienda.getText());
 		a.setPartitaIVA(Integer.parseInt(txtIva.getText()));
 		a.setIndirizzoFatturazione(txtIndirizzo.getText());
+		n = h.aggiungiCliente(Integer.parseInt(txtCamera.getText()), a, dateInizio.getValue(), dateFine.getValue());
+		if (n == 0)
+			txtResult.setText("Camera occupata nel periodo");
+		if (n == -1)
+			txtResult.setText("La data finale viene prima della data iniziale");
+		if (n == 1)
+			txtResult.setText("Cliente inserito");
+		txtAzienda.setText("");
+		txtIva.setText("");
+		txtIndirizzo.setText("");
+		txtCamera.setText("");
 	}
 
 	@FXML
 	void insertPrivato(ActionEvent event) {
-
+		p.setNome(txtNome.getText());
+		p.setCognome(txtCognome.getText());
+		p.setNumeroTelefono(Integer.parseInt(txtNumero.getText()));
+		h.aggiungiCliente(Integer.parseInt(txtCamera.getText()), p, dateInizio.getValue(), dateFine.getValue());
+		txtNome.setText("");
+		txtCognome.setText("");
+		txtNumero.setText("");
+		txtCamera.setText("");
 	}
 
 	@FXML
 	void searchDate(ActionEvent event) {
+		if (h.controllaCamera(Integer.parseInt(txtDate.getText()), date.getValue()) == null)
+			txtResult.setText("Camera libera");
+		else
+			txtResult.setText(
+					"Camera occupata da " + h.controllaCamera(Integer.parseInt(txtDate.getText()), date.getValue()));
 
 	}
 
 	@FXML // This method is called by the FXMLLoader when initialization is complete
 	void initialize() {
-		assert txtDataInizio != null : "fx:id=\"txtDataInizio\" was not injected: check your FXML file 'HotelView.fxml'.";
-		assert txtDataFine != null : "fx:id=\"txtDataFine\" was not injected: check your FXML file 'HotelView.fxml'.";
+		assert dateInizio != null : "fx:id=\"dateInizio\" was not injected: check your FXML file 'HotelView.fxml'.";
+		assert dateFine != null : "fx:id=\"dateFine\" was not injected: check your FXML file 'HotelView.fxml'.";
+		assert txtCamera != null : "fx:id=\"txtCamera\" was not injected: check your FXML file 'HotelView.fxml'.";
 		assert txtNome != null : "fx:id=\"txtNome\" was not injected: check your FXML file 'HotelView.fxml'.";
 		assert txtCognome != null : "fx:id=\"txtCognome\" was not injected: check your FXML file 'HotelView.fxml'.";
 		assert txtNumero != null : "fx:id=\"txtNumero\" was not injected: check your FXML file 'HotelView.fxml'.";

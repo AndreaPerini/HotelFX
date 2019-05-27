@@ -1,6 +1,6 @@
 package model;
 
-public class Azienda extends Cliente {
+public class Azienda extends Privato {
 
 	private String nomeAzienda;
 	private int partitaIVA;
