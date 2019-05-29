@@ -21,6 +21,15 @@ public class HotelController {
 	@FXML // URL location of the FXML file that was given to the FXMLLoader
 	private URL location;
 
+	@FXML // fx:id="inizio"
+	private TextField inizio; // Value injected by FXMLLoader
+
+	@FXML // fx:id="fine"
+	private TextField fine; // Value injected by FXMLLoader
+
+	@FXML // fx:id="numcamera"
+	private TextField numcamera; // Value injected by FXMLLoader
+
 	@FXML // fx:id="dateInizio"
 	private DatePicker dateInizio; // Value injected by FXMLLoader
 
@@ -29,6 +38,15 @@ public class HotelController {
 
 	@FXML // fx:id="txtCamera"
 	private TextField txtCamera; // Value injected by FXMLLoader
+
+	@FXML // fx:id="nome"
+	private TextField nome; // Value injected by FXMLLoader
+
+	@FXML // fx:id="cognome"
+	private TextField cognome; // Value injected by FXMLLoader
+
+	@FXML // fx:id="telefono"
+	private TextField telefono; // Value injected by FXMLLoader
 
 	@FXML // fx:id="txtNome"
 	private TextField txtNome; // Value injected by FXMLLoader
@@ -42,6 +60,15 @@ public class HotelController {
 	@FXML // fx:id="btnInserisciPrivato"
 	private Button btnInserisciPrivato; // Value injected by FXMLLoader
 
+	@FXML // fx:id="azienda"
+	private TextField azienda; // Value injected by FXMLLoader
+
+	@FXML // fx:id="iva"
+	private TextField iva; // Value injected by FXMLLoader
+
+	@FXML // fx:id="indirizzo"
+	private TextField indirizzo; // Value injected by FXMLLoader
+
 	@FXML // fx:id="txtAzienda"
 	private TextField txtAzienda; // Value injected by FXMLLoader
 
@@ -53,6 +80,12 @@ public class HotelController {
 
 	@FXML // fx:id="btnInserisciAzienda"
 	private Button btnInserisciAzienda; // Value injected by FXMLLoader
+
+	@FXML // fx:id="ncamera"
+	private TextField ncamera; // Value injected by FXMLLoader
+
+	@FXML // fx:id="dataCerca"
+	private TextField dataCerca; // Value injected by FXMLLoader
 
 	@FXML // fx:id="txtDate"
 	private TextField txtDate; // Value injected by FXMLLoader
@@ -114,17 +147,28 @@ public class HotelController {
 
 	@FXML // This method is called by the FXMLLoader when initialization is complete
 	void initialize() {
+		assert inizio != null : "fx:id=\"inizio\" was not injected: check your FXML file 'HotelView.fxml'.";
+		assert fine != null : "fx:id=\"fine\" was not injected: check your FXML file 'HotelView.fxml'.";
+		assert numcamera != null : "fx:id=\"numcamera\" was not injected: check your FXML file 'HotelView.fxml'.";
 		assert dateInizio != null : "fx:id=\"dateInizio\" was not injected: check your FXML file 'HotelView.fxml'.";
 		assert dateFine != null : "fx:id=\"dateFine\" was not injected: check your FXML file 'HotelView.fxml'.";
 		assert txtCamera != null : "fx:id=\"txtCamera\" was not injected: check your FXML file 'HotelView.fxml'.";
+		assert nome != null : "fx:id=\"nome\" was not injected: check your FXML file 'HotelView.fxml'.";
+		assert cognome != null : "fx:id=\"cognome\" was not injected: check your FXML file 'HotelView.fxml'.";
+		assert telefono != null : "fx:id=\"telefono\" was not injected: check your FXML file 'HotelView.fxml'.";
 		assert txtNome != null : "fx:id=\"txtNome\" was not injected: check your FXML file 'HotelView.fxml'.";
 		assert txtCognome != null : "fx:id=\"txtCognome\" was not injected: check your FXML file 'HotelView.fxml'.";
 		assert txtNumero != null : "fx:id=\"txtNumero\" was not injected: check your FXML file 'HotelView.fxml'.";
 		assert btnInserisciPrivato != null : "fx:id=\"btnInserisciPrivato\" was not injected: check your FXML file 'HotelView.fxml'.";
+		assert azienda != null : "fx:id=\"azienda\" was not injected: check your FXML file 'HotelView.fxml'.";
+		assert iva != null : "fx:id=\"iva\" was not injected: check your FXML file 'HotelView.fxml'.";
+		assert indirizzo != null : "fx:id=\"indirizzo\" was not injected: check your FXML file 'HotelView.fxml'.";
 		assert txtAzienda != null : "fx:id=\"txtAzienda\" was not injected: check your FXML file 'HotelView.fxml'.";
 		assert txtIva != null : "fx:id=\"txtIva\" was not injected: check your FXML file 'HotelView.fxml'.";
 		assert txtIndirizzo != null : "fx:id=\"txtIndirizzo\" was not injected: check your FXML file 'HotelView.fxml'.";
 		assert btnInserisciAzienda != null : "fx:id=\"btnInserisciAzienda\" was not injected: check your FXML file 'HotelView.fxml'.";
+		assert ncamera != null : "fx:id=\"ncamera\" was not injected: check your FXML file 'HotelView.fxml'.";
+		assert dataCerca != null : "fx:id=\"dataCerca\" was not injected: check your FXML file 'HotelView.fxml'.";
 		assert txtDate != null : "fx:id=\"txtDate\" was not injected: check your FXML file 'HotelView.fxml'.";
 		assert date != null : "fx:id=\"date\" was not injected: check your FXML file 'HotelView.fxml'.";
 		assert btnDate != null : "fx:id=\"btnDate\" was not injected: check your FXML file 'HotelView.fxml'.";
